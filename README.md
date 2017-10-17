@@ -8,3 +8,8 @@ docker run -v /mp_repo/trunk:/mnt/extra-addons  -p 8070:8069 --name malphil --li
 
 pgadmin4:
 docker run --name pgadmin4 --link postgres9.6:postgres -p 5050:5050 -d fenglc/pgadmin4
+
+
+address info
+https://en.wikipedia.org/wiki/List_of_cities_and_municipalities_in_the_Philippines
+https://en.wikipedia.org/wiki/Provinces_of_the_Philippines

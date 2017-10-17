@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <odoo>
+
+    <!--customer address form view-->
+    <record id="view_customer_address_form" model="ir.ui.view">
+        <field name="name">Customer address form</field>
+        <field name="model">mp.customer_address</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group colspan="4">
+                        <group>
+                            <field name="address_type"/>
+                        </group>
+                        <group>
+                            <field name="default_rec"/>
+                        </group>
+                    </group>
+                    <group colspan="4">
+                        <group width="60%">
+                            <field name="address1" placeholder='Required' string="Address"/>
+                            <field name="address2" string=" "/>
+                            <field name="address3" string=" "/>
+                            <field name="city" placeholder='Required'/>
+                        </group>
+                        <group>
+                            <!--<field name="country_code" invisible="True"/>-->
+                            <field name="country_id" options="{'no_open':True,'no_create':True}" placeholder='Required'/>
+                            <!--<field name="state_id" attrs="{'invisible':[('country_code','!=','MY')]}" options="{'no_open':True,'no_create':True}" domain="[('country_id','=',country_id)]"/>-->
+                            <!--<field name="state_name" attrs="{'invisible':[('country_code','=','MY')]}"/>-->
+                            <!--<field name="state_id" options="{'no_open':True,'no_create':True}" domain="[('country_id','=',country_id)]"/>-->
+                            <!--<field name="state_id" options="{'no_open':True}" domain="[('country_id','=',country_id)]"/>-->
+                            <field name="province_id" domain="[('country_id','=',country_id)]"/>
+                            <field name="cities_municipalities_id" domain="[('province_id','=',province_id)]"/>
+                            <!--<field name="state_name"/>-->
+                            <field name="postcode"  placeholder='Required'/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
     <!--customer tree view-->
     <record id="customer_tree_view" model="ir.ui.view">
         <field name="name">customer tree view</field>
@@ -19,29 +60,29 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group colspan="2">
-                        <group>
-                            <field name="name"/>
-                        </group>
-                        <group>
-                            <field name="mobile_no"/>
-                            <field name="date_of_birth"/>
-                        </group>
-                    </group>
-                    <group>
-                          <table style='width:100%;'>
-                            <tr>
-                              <th style='width:7%;'><label for="create_date" string='Created:' style="font-weight:bold;"/></th>
-                              <td style='width:15%;'><field name="create_date" readonly="1"/></td>
-                              <th style='width:3%;'><label for="create_uid" string='By:' style="font-weight:bold;"/></th>
-                              <td style='width:20%;'><field name="create_uid" readonly="1" options="{'no_open':True,'no_create':True}"/></td>
-                              <th style='width:7%;'><label for="write_date" string='Last updated:' style="font-weight:bold;"/></th>
-                              <td style='width:15%;'><field name="write_date" readonly="1"/></td>
-                              <th style='width:3%;'><label for="write_uid" string='By:' style="font-weight:bold;"/></th>
-                              <td><field name="write_uid" readonly="1" options="{'no_open':True,'no_create':True}"/></td>
-                            </tr>
-                         </table>
-                    </group>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <field name="picture" widget='image' options='{"size": [150, 140]}' nolabel="1"/>
+                        </div>
+                        <div class="col-sm-5">
+                            <group>
+                                <field name="name"/>
+                                <field name="mobile_no"/>
+                                <field name="date_of_birth"/>
+                            </group>
+                        </div>
+                    </div>
+                    <notebook>
+                        <page name="addresses" string="Addresses">
+                            <field name="address_ids">
+                            <tree string="Address" limit="5">
+                                <field name="address_type"/>
+                                <field name="display_address"/>
+                                <field name="default_rec"/>
+                            </tree>
+                          </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
