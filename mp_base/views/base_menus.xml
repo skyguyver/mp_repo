@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <!--Create Top Menu-->
+    <menuitem name="Manage" id="top_menu_manage" sequence="1"/>
+    <menuitem name="Setup" id="top_menu_setup" sequence="2"/>
+    <!--Sub Menu-->
+    <menuitem name="Codes" id="codes_menu" sequence="3"
+              parent="top_menu_setup" action="action_common_codes"/>
+</odoo>

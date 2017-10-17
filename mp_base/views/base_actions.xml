@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <!--Define Action-->
+    <record id="action_common_codes" model="ir.actions.act_window">
+        <field name="name">Common code</field>
+        <field name="res_model">mp.common_code</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create new common code
+            </p>
+        </field>
+    </record>
+</odoo>
