@@ -15,16 +15,32 @@
     <record id="customer_form_view" model="ir.ui.view">
         <field name="name">customer form view</field>
         <field name="model">mp.customer</field>
+        <field name="priority" eval="1" />
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group colspan="4">
-                        <field name="name"/>
-                        <field name="mobile_no"/>
-                        <field name="date_of_birth"/>
+                    <group colspan="2">
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="mobile_no"/>
+                            <field name="date_of_birth"/>
+                        </group>
                     </group>
-                    <group colspan="4">
-                        <field name="active"/>
+                    <group>
+                          <table style='width:100%;'>
+                            <tr>
+                              <th style='width:7%;'><label for="create_date" string='Created:' style="font-weight:bold;"/></th>
+                              <td style='width:15%;'><field name="create_date" readonly="1"/></td>
+                              <th style='width:3%;'><label for="create_uid" string='By:' style="font-weight:bold;"/></th>
+                              <td style='width:20%;'><field name="create_uid" readonly="1" options="{'no_open':True,'no_create':True}"/></td>
+                              <th style='width:7%;'><label for="write_date" string='Last updated:' style="font-weight:bold;"/></th>
+                              <td style='width:15%;'><field name="write_date" readonly="1"/></td>
+                              <th style='width:3%;'><label for="write_uid" string='By:' style="font-weight:bold;"/></th>
+                              <td><field name="write_uid" readonly="1" options="{'no_open':True,'no_create':True}"/></td>
+                            </tr>
+                         </table>
                     </group>
                 </sheet>
             </form>
