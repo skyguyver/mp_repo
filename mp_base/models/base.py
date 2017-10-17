@@ -1,4 +1,4 @@
-from openerp import models, fields
+from odoo import models, fields
 
 class mp_common_code(models.Model):
     _name = 'mp.common_code'

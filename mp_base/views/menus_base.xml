@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <!--Create Top Menu-->
+    <menuitem name="Manage" id="top_menu" sequence="1"/>
+</odoo>

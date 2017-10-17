@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <!--Create Child Menu-->
+    <menuitem name="Customer" id="customer_menu" sequence="1"
+              parent="mp_base.top_menu" action="customer_action"/>
+</odoo>
