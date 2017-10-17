@@ -42,4 +42,15 @@
             </p>
         </field>
     </record>
+    <record id="customer_acct_action" model="ir.actions.act_window">
+        <field name="name">Customer account</field>
+        <field name="res_model">mp.customer_acct</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create new customer account
+            </p>
+        </field>
+    </record>
 </odoo>

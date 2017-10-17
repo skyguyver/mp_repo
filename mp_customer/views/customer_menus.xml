@@ -4,4 +4,6 @@
     <!--Create Child Menu-->
     <menuitem name="Customer" id="customer_menu" sequence="1"
               parent="mp_base.top_menu_manage" action="customer_action"/>
+    <menuitem name="Customer account" id="customer_acct_menu" sequence="2"
+              parent="mp_base.top_menu_manage" action="customer_acct_action"/>
 </odoo>
