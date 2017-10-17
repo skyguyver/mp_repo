@@ -3,5 +3,5 @@
 <odoo>
     <!--Create Child Menu-->
     <menuitem name="Customer" id="customer_menu" sequence="1"
-              parent="mp_base.top_menu" action="customer_action"/>
+              parent="mp_base.top_menu_manage" action="customer_action"/>
 </odoo>

@@ -2,5 +2,6 @@
 
 <odoo>
     <!--Create Top Menu-->
-    <menuitem name="Manage" id="top_menu" sequence="1"/>
+    <menuitem name="Manage" id="top_menu_manage" sequence="1"/>
+    <!--<menuitem name="Setup" id="top_menu" sequence="2"/>-->
 </odoo>

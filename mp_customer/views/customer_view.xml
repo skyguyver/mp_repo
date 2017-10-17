@@ -17,13 +17,16 @@
         <field name="model">mp.customer</field>
         <field name="arch" type="xml">
             <form>
-                <group>
-                    <group>
+                <sheet>
+                    <group colspan="4">
                         <field name="name"/>
                         <field name="mobile_no"/>
                         <field name="date_of_birth"/>
                     </group>
-                </group>
+                    <group colspan="4">
+                        <field name="active"/>
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>
